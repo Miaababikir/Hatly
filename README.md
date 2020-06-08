@@ -1,1 +1,1 @@
-# Laravel Inertia dashboard starter
+# Hatly
