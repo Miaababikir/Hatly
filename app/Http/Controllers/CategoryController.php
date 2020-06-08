@@ -7,11 +7,24 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    public function index()
+    {
+        $categories = Category::all();
+
+        return inertia()->render('Dashboard/categories/index', ['categories' => $categories]);
+    }
+
+    public function create()
+    {
+        return inertia()->render('Dashboard/categories/create');
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([
-           'name' => 'required',
-           'name_ar' => 'required',
+            'name' => 'required',
+            'name_ar' => 'required',
         ]);
 
         Category::create($data);
@@ -20,6 +33,13 @@ class CategoryController extends Controller
             'type' => 'success',
             'message' => 'تم الاضافة بنجاح'
         ]);
+
+        return redirect()->route('categories.index');
+    }
+
+    public function edit(Category $category)
+    {
+        return inertia()->render('Dashboard/categories/edit', ['category' => $category]);
     }
 
     public function update(Request $request, Category $category)
@@ -35,5 +55,8 @@ class CategoryController extends Controller
             'type' => 'success',
             'message' => 'تم التعديل بنجاح'
         ]);
+
+        return redirect()->route('categories.index');
+
     }
 }

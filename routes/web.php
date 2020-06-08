@@ -29,7 +29,10 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::put('/users/{user}', 'UserController@update')->name('users.update');
     Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
 
+    Route::get('/categories', 'CategoryController@index')->name('categories.index');
+    Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
     Route::post('/categories', 'CategoryController@store')->name('categories.store');
+    Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
     Route::put('/categories/{category}', 'CategoryController@update')->name('categories.update');
 
     Route::get('/areas', 'AreaController@index')->name('areas.index');

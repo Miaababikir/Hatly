@@ -59,15 +59,16 @@
                         <span class="mx-2 text-gray-300">المناطق</span>
                     </inertia-link>
                 </li>
-                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
-                    <a href="#" class="flex items-center">
+                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
+                    :class="route().current('categories.*')? 'bg-gray-900' : ''">
+                    <inertia-link :href="$route('categories.index')" class="flex items-center">
                         <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round"
                              stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path
                                 d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
                         </svg>
                         <span class="mx-2 text-gray-300">الاصناف</span>
-                    </a>
+                    </inertia-link>
                 </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
                     <a href="#" class="flex items-center">
