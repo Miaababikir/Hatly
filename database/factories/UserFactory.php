@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Area;
 use App\Category;
 use App\User;
 use Faker\Generator as Faker;
@@ -29,6 +30,13 @@ $factory->define(User::class, function (Faker $faker) {
 });
 
 $factory->define(Category::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'name_ar' => $faker->name,
+    ];
+});
+
+$factory->define(Area::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'name_ar' => $faker->name,
