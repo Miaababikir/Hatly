@@ -3,11 +3,11 @@
 
         <div class="mt-8">
             <div class="flex justify-between">
-                <h2 class="text-3xl text-gray-700 font-bold">Users</h2>
+                <h2 class="text-3xl text-gray-700 font-bold">المستخدمين</h2>
                 <div>
                     <inertia-link href="/dashboard/users/create"
                                   class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded">
-                        Create User
+                        مستخدم جديد
                     </inertia-link>
                 </div>
             </div>
@@ -21,11 +21,11 @@
                                 <tr>
                                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                                         style="text-align: start">
-                                        Name
+                                        الاسم
                                     </th>
                                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                                         style="text-align: start">
-                                        Email
+                                        البريد الالكتروني
                                     </th>
                                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                                 </tr>
@@ -40,7 +40,7 @@
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
-                                        <inertia-link :href="`/dashboard/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">Edit</inertia-link>
+                                        <inertia-link :href="`/dashboard/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">تعديل</inertia-link>
                                     </td>
                                 </tr>
                                 </tbody>

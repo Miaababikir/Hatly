@@ -39,7 +39,7 @@ class UserController extends Controller
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'User created successfully'
+            'message' => 'تم الاضافة بنجاح'
         ]);
 
         return redirect()->route('users.index');
@@ -67,7 +67,7 @@ class UserController extends Controller
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'User updated successfully'
+            'message' => 'تم التعديل بنجاح'
         ]);
 
         return redirect()->route('users.index');

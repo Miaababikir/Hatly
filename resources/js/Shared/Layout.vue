@@ -7,7 +7,7 @@
             <nav class="hidden md:flex justify-between items-center bg-white p-4 shadow-md h-16">
                 <div>
                     <input class="px-4 py-2 bg-gray-200 border border-gray-300 rounded focus:outline-none" type="text"
-                           placeholder="Search.."/>
+                           placeholder="بحث.."/>
                 </div>
                 <div>
                     <button class="mx-2 text-gray-700 focus:outline-none" @click="logout">

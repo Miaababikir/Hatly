@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Category created successfully'
+            'message' => 'تم الاضافة بنجاح'
         ]);
     }
 
@@ -33,7 +33,7 @@ class CategoryController extends Controller
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Category updated successfully'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 }
