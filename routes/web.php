@@ -32,7 +32,10 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::post('/categories', 'CategoryController@store')->name('categories.store');
     Route::put('/categories/{category}', 'CategoryController@update')->name('categories.update');
 
+    Route::get('/areas', 'AreaController@index')->name('areas.index');
+    Route::get('/areas/create', 'AreaController@create')->name('areas.create');
     Route::post('/areas', 'AreaController@store')->name('areas.store');
+    Route::get('/areas/{area}/edit', 'AreaController@edit')->name('areas.edit');
     Route::put('/areas/{area}', 'AreaController@update')->name('areas.update');
 
 });

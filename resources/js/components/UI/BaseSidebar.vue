@@ -47,8 +47,9 @@
                         <span class="mx-2 text-gray-300">المستخدمين</span>
                     </inertia-link>
                 </li>
-                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
-                    <a href="#" class="flex items-center">
+                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
+                    :class="route().current('areas.*')? 'bg-gray-900' : ''">
+                    <inertia-link :href="$route('areas.index')" class="flex items-center">
                         <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round"
                              stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path
@@ -56,7 +57,7 @@
                             <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                         <span class="mx-2 text-gray-300">المناطق</span>
-                    </a>
+                    </inertia-link>
                 </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
                     <a href="#" class="flex items-center">

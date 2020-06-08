@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class AreaController extends Controller
 {
+
+    public function index()
+    {
+        $areas = Area::all();
+
+        return inertia()->render('Dashboard/areas/index', ['areas' => $areas]);
+    }
+
+    public function create()
+    {
+        return inertia()->render('Dashboard/areas/create');
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -18,8 +31,15 @@ class AreaController extends Controller
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Area created successfully'
+            'message' => 'تم الاضافة بنجاح'
         ]);
+
+        return redirect()->route('areas.index');
+    }
+
+    public function edit(Area $area)
+    {
+        return inertia()->render('Dashboard/areas/edit', ['area' => $area]);
     }
 
     public function update(Request $request, Area $area)
@@ -33,7 +53,10 @@ class AreaController extends Controller
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Area updated successfully'
+            'message' => 'تم التعديل بنجاح'
         ]);
+
+        return redirect()->route('areas.index');
+
     }
 }
