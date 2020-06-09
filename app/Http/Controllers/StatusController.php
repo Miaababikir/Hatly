@@ -11,7 +11,7 @@ class StatusController extends Controller
     {
         $statuses = Status::all();
 
-        return inertia()->render('Dashboard/statuses/index', ['status' => $status]);
+        return inertia()->render('Dashboard/statuses/index', ['statuses' => $statuses]);
     }
 
     public function create()
