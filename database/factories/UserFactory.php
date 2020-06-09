@@ -4,6 +4,7 @@
 
 use App\Area;
 use App\Category;
+use App\Status;
 use App\Unit;
 use App\User;
 use Faker\Generator as Faker;
@@ -39,6 +40,13 @@ $factory->define(Category::class, function (Faker $faker) {
 });
 
 $factory->define(Area::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'name_ar' => $faker->name,
+    ];
+});
+
+$factory->define(Status::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'name_ar' => $faker->name,

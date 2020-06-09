@@ -47,4 +47,10 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/units/{unit}/edit', 'UnitController@edit')->name('units.edit');
     Route::put('/units/{unit}', 'UnitController@update')->name('units.update');
 
+    Route::get('/status', 'StatusController@index')->name('status.index');
+    Route::get('/status/create', 'StatusController@create')->name('status.create');
+    Route::post('/status', 'StatusController@store')->name('status.store');
+    Route::get('/status/{status}/edit', 'StatusController@edit')->name('status.edit');
+    Route::put('/status/{status}', 'StatusController@update')->name('status.update');
+
 });
