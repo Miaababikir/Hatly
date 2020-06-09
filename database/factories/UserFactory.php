@@ -1,11 +1,13 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
 use App\Area;
 use App\Category;
+use App\Unit;
 use App\User;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\Str;
 
 /*
@@ -40,5 +42,14 @@ $factory->define(Area::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'name_ar' => $faker->name,
+    ];
+});
+
+$factory->define(Unit::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'name_ar' => $faker->name,
+        'short_name' => $faker->name,
+        'short_name_ar' => $faker->name,
     ];
 });

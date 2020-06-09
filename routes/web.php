@@ -41,4 +41,10 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/areas/{area}/edit', 'AreaController@edit')->name('areas.edit');
     Route::put('/areas/{area}', 'AreaController@update')->name('areas.update');
 
+    Route::get('/units', 'UnitController@index')->name('units.index');
+    Route::get('/units/create', 'UnitController@create')->name('units.create');
+    Route::post('/units', 'UnitController@store')->name('units.store');
+    Route::get('/units/{unit}/edit', 'UnitController@edit')->name('units.edit');
+    Route::put('/units/{unit}', 'UnitController@update')->name('units.update');
+
 });
