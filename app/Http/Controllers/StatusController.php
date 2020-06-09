@@ -9,14 +9,14 @@ class StatusController extends Controller
 {
     public function index()
     {
-        $status = Status::all();
+        $statuses = Status::all();
 
-        return inertia()->render('Dashboard/status/index', ['status' => $status]);
+        return inertia()->render('Dashboard/statuses/index', ['status' => $status]);
     }
 
     public function create()
     {
-        return inertia()->render('Dashboard/status/create');
+        return inertia()->render('Dashboard/statuses/create');
     }
 
     public function store(Request $request)
@@ -33,12 +33,12 @@ class StatusController extends Controller
             'message' => 'تم الاضافة بنجاح'
         ]);
 
-        return redirect()->route('status.index');
+        return redirect()->route('statuses.index');
     }
 
     public function edit(Status $status)
     {
-        return inertia()->render('Dashboard/status/edit', ['status' => $status]);
+        return inertia()->render('Dashboard/statuses/edit', ['status' => $status]);
     }
 
     public function update(Request $request, Status $status)
@@ -55,7 +55,7 @@ class StatusController extends Controller
             'message' => 'تم التعديل بنجاح'
         ]);
 
-        return redirect()->route('status.index');
+        return redirect()->route('statuses.index');
 
     }
 }

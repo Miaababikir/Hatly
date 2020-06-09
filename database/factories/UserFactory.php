@@ -4,6 +4,7 @@
 
 use App\Area;
 use App\Category;
+use App\Customer;
 use App\Status;
 use App\Unit;
 use App\User;
@@ -59,5 +60,15 @@ $factory->define(Unit::class, function (Faker $faker) {
         'name_ar' => $faker->name,
         'short_name' => $faker->name,
         'short_name_ar' => $faker->name,
+    ];
+});
+
+$factory->define(Customer::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'username' => $faker->userName,
+        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+        'address' => $faker->address,
+        'area_id' => fn() =>  \factory(Area::class)->create(),
     ];
 });

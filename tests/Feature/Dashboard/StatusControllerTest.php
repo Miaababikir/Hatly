@@ -14,11 +14,11 @@ class StatusControllerTest extends TestCase
     /**
      * @test
      */
-    public function can_add_area()
+    public function can_add_status()
     {
         $this->login();
 
-        $this->post('/dashboard/status', [
+        $this->post('/dashboard/statuses', [
             'name' => 'Status name',
             'name_ar' => 'Status name ar',
         ]);
@@ -29,13 +29,13 @@ class StatusControllerTest extends TestCase
     /**
      * @test
      */
-    public function can_update_area()
+    public function can_update_status()
     {
         $this->login();
 
         $status = factory(Status::class)->create();
 
-        $this->put("/dashboard/status/$status->id", [
+        $this->put("/dashboard/statuses/$status->id", [
             'name' => 'Status name',
             'name_ar' => 'Status name ar',
         ]);
