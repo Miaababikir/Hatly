@@ -57,6 +57,12 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/customers/create', 'CustomerController@create')->name('customers.create');
     Route::post('/customers', 'CustomerController@store')->name('customers.store');
     Route::get('/customers/{customer}/edit', 'CustomerController@edit')->name('customers.edit');
-    Route::put('/customers/{customer}', 'CustomerController@update')->name('status.update');
+    Route::put('/customers/{customer}', 'CustomerController@update')->name('customers.update');
+
+    Route::get('/products', 'ProductController@index')->name('products.index');
+    Route::get('/products/create', 'ProductController@create')->name('products.create');
+    Route::post('/products', 'ProductController@store')->name('products.store');
+    Route::get('/products/{product}/edit', 'ProductController@edit')->name('products.edit');
+    Route::put('/products/{product}', 'ProductController@update')->name('products.update');
 
 });
