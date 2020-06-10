@@ -48,13 +48,6 @@ $factory->define(Area::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(Status::class, function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'name_ar' => $faker->name,
-    ];
-});
-
 $factory->define(Unit::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
