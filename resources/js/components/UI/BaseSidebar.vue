@@ -71,10 +71,17 @@
                     </inertia-link>
                 </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
-                    :class="route().current('statuses.*')? 'bg-gray-900' : ''">
-                    <inertia-link :href="$route('statuses.index')" class="flex items-center">
-                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <span class="mx-2 text-gray-300">الحالات</span>
+                    :class="route().current('products.*')? 'bg-gray-900' : ''">
+                    <inertia-link :href="$route('products.index')" class="flex items-center">
+                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span class="mx-2 text-gray-300">المنتجات</span>
+                    </inertia-link>
+                </li>
+                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
+                    :class="route().current('units.*')? 'bg-gray-900' : ''">
+                    <inertia-link :href="$route('units.index')" class="flex items-center">
+                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                        <span class="mx-2 text-gray-300">الوحدات</span>
                     </inertia-link>
                 </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">

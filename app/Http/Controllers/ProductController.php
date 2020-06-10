@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
+use App\Unit;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with(['category', 'unit'])->get();
 
         return inertia()->render('Dashboard/products/index', ['products' => $products]);
     }
 
     public function create()
     {
-        return inertia()->render('Dashboard/products/create');
+        return inertia()->render('Dashboard/products/create', [
+            'categories' => Category::all(),
+            'units' => Unit::all()
+        ]);
     }
 
     public function store(Request $request)
@@ -42,7 +47,12 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return inertia()->render('Dashboard/products/edit', ['customer' => $product]);
+        $product->load(['category', 'unit']);
+        return inertia()->render('Dashboard/products/edit', [
+            'product' => $product,
+            'categories' => Category::all(),
+            'units' => Unit::all()
+        ]);
     }
 
     public function update(Request $request, Product $product)

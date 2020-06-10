@@ -41,7 +41,7 @@ class UnitController extends Controller
 
     public function edit(Unit $unit)
     {
-        return inertia()->render('Dashboard/units/edit', ['area' => $unit]);
+        return inertia()->render('Dashboard/units/edit', ['unit' => $unit]);
     }
 
     public function update(Request $request, Unit $unit)

@@ -1,12 +1,15 @@
 require('./bootstrap');
 
-import {InertiaApp} from '@inertiajs/inertia-vue'
-import Vue from 'vue'
+import {InertiaApp} from '@inertiajs/inertia-vue';
+import Vue from 'vue';
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
 
 Vue.component('base-sidebar', require('./components/UI/BaseSidebar').default);
 Vue.component('base-panel', require('./components/UI/BasePanel').default);
 Vue.component('base-button', require('./components/UI/BaseButton').default);
 Vue.component('base-input', require('./components/UI/BaseInput').default);
+Vue.component('base-select', vSelect)
 
 Vue.use(InertiaApp)
 
