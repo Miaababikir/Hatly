@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 // Categories => Done
 // Products => Done
 // Areas => Done
+// Delivery price => Done
 // Place order
-// Delivery price
 // Order Details
 // Feedback
 // Invite friend
@@ -42,5 +42,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/categories', 'API\CategoryController@index');
     Route::get('/areas', 'API\AreaController@index');
     Route::get('/products', 'API\ProductController@index');
+    Route::get('/delivery-fees', 'API\DeliveryController@index');
+    Route::post('/orders', 'API\OrderController@store');
 
 });

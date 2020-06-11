@@ -10,13 +10,10 @@ class Customer extends Authenticatable
 {
     use HasApiTokens;
     protected $guarded = [];
+    protected $hidden = ['password'];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
