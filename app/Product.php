@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $guarded = [];
+    protected $with = ['category', 'unit'];
 
     public function category()
     {

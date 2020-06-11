@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with(['category', 'unit'])->get();
+        $products = Product::all();
 
         return inertia()->render('Dashboard/products/index', ['products' => $products]);
     }
@@ -47,7 +47,6 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        $product->load(['category', 'unit']);
         return inertia()->render('Dashboard/products/edit', [
             'product' => $product,
             'categories' => Category::all(),

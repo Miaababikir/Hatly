@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // Areas => Done
 // Delivery price => Done
 // Place order => Done
-// Order Details
+// Order Details => Done
 // Feedback
 // Invite friend
 // Edit profile
