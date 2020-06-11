@@ -11,6 +11,9 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
+
         $order = auth()->user()->placeOrder($request->cart);
+
+        return response()->json($order);
     }
 }

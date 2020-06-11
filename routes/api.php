@@ -44,6 +44,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/products', 'API\ProductController@index');
     Route::get('/delivery-fees', 'API\DeliveryController@index');
 
+
     Route::post('/orders', 'API\OrderController@store');
     Route::get('/orders/{order}/details', 'API\OrderDetailController@index');
 

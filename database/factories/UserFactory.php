@@ -37,24 +37,24 @@ $factory->define(User::class, function (Faker $faker) {
 
 $factory->define(Category::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'name_ar' => $faker->name,
+        'name' => $faker->word,
+        'name_ar' => $faker->word,
     ];
 });
 
 $factory->define(Area::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'name_ar' => $faker->name,
+        'name' => $faker->word,
+        'name_ar' => $faker->word,
     ];
 });
 
 $factory->define(Unit::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'name_ar' => $faker->name,
-        'short_name' => $faker->name,
-        'short_name_ar' => $faker->name,
+        'name' => $faker->word,
+        'name_ar' => $faker->word,
+        'short_name' => $faker->word,
+        'short_name_ar' => $faker->word,
     ];
 });
 
@@ -71,8 +71,8 @@ $factory->define(Customer::class, function (Faker $faker) {
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'name_ar' => $faker->name,
+        'name' => $faker->word,
+        'name_ar' => $faker->word,
         'category_id' => fn() =>  \factory(Category::class)->create(),
         'unit_id' => fn() =>  \factory(Unit::class)->create(),
         'price' => 100,
