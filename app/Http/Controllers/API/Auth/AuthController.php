@@ -21,6 +21,8 @@ class AuthController extends Controller
             'address' => 'required',
         ]);
 
+        $data['password'] = Hash::make($data['password']);
+
         return Customer::create($data);
     }
 
