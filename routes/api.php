@@ -14,9 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Register => Done
+// Login => Done
+// Verification
+// Forget password
+// Categories
+// Products
+// Areas
+// Place order
+// Delivery price
+// Order Details
+// Feedback
+// Invite friend
+// Edit profile
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::post('/login', 'API\Auth\AuthController@login');
 Route::post('/register', 'API\Auth\AuthController@register');
+
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::post('/logout', 'API\Auth\AuthController@logout');
+
+});

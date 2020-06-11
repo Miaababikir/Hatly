@@ -6,6 +6,7 @@ use App\Area;
 use App\Customer;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class AuthTest extends TestCase
@@ -54,5 +55,26 @@ class AuthTest extends TestCase
             'username' => $customer->username,
         ]);
 
+    }
+
+    /**
+    * @test
+    */
+     public function can_logout_customer_and_delete_his_token()
+    {
+        $customer = factory(Customer::class)->create([
+            'username' => 'jonedoe'
+        ]);
+
+        Sanctum::actingAs(
+            $customer,
+            ['*']
+        );
+
+        $customer->createToken('mobile');
+
+        $this->post('/api/logout');
+
+        $this->assertCount(0, $customer->tokens);
     }
 }
