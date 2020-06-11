@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 // Login => Done
 // Verification
 // Forget password
-// Categories
-// Products
-// Areas
+// Categories => Done
+// Products => Done
+// Areas => Done
 // Place order
 // Delivery price
 // Order Details
@@ -38,5 +38,9 @@ Route::post('/register', 'API\Auth\AuthController@register');
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/logout', 'API\Auth\AuthController@logout');
+
+    Route::get('/categories', 'API\CategoryController@index');
+    Route::get('/areas', 'API\AreaController@index');
+    Route::get('/products', 'API\ProductController@index');
 
 });
