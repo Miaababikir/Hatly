@@ -5,6 +5,7 @@
 use App\Area;
 use App\Category;
 use App\Customer;
+use App\Order;
 use App\Product;
 use App\Status;
 use App\Unit;
@@ -76,6 +77,12 @@ $factory->define(Product::class, function (Faker $faker) {
         'unit_id' => fn() =>  \factory(Unit::class)->create(),
         'price' => 100,
         'stock' => 10,
+    ];
+});
+
+$factory->define(Order::class, function (Faker $faker) {
+    return [
+        'customer_id' => fn() =>  \factory(Customer::class)->create(),
     ];
 });
 

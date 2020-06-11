@@ -44,4 +44,29 @@ class OrderTest extends TestCase
         $this->assertEquals(3, $details->count());
 
     }
+
+    /**
+     * @test
+     */
+    public function can_get_order_details()
+    {
+        $customer = $this->apiLogin();
+
+        $product1 = factory(Product::class)->create(['price' => 100, 'stock' => 5]);
+        $product2 = factory(Product::class)->create(['price' => 250, 'stock' => 10]);
+        $product3 = factory(Product::class)->create(['price' => 300, 'stock' => 20]);
+
+        $cart = [
+            ['id' => $product1->id, 'price' => $product1->price, 'quantity' => 3],
+            ['id' => $product2->id, 'price' => $product2->price, 'quantity' => 5],
+            ['id' => $product3->id, 'price' => $product3->price, 'quantity' => 10],
+        ];
+
+        $order = $customer->placeOrder($cart);
+
+        $response = $this->get("/api/orders/$order->id/details");
+
+        $response->assertJsonCount(3);
+
+    }
 }

@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Products => Done
 // Areas => Done
 // Delivery price => Done
-// Place order
+// Place order => Done
 // Order Details
 // Feedback
 // Invite friend
@@ -43,6 +43,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/areas', 'API\AreaController@index');
     Route::get('/products', 'API\ProductController@index');
     Route::get('/delivery-fees', 'API\DeliveryController@index');
+
     Route::post('/orders', 'API\OrderController@store');
+    Route::get('/orders/{order}/details', 'API\OrderDetailController@index');
 
 });

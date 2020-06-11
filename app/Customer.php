@@ -16,4 +16,19 @@ class Customer extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+
+    public function placeOrder($cart)
+    {
+        $order = $this->orders()->create();
+
+        foreach ($cart as $item) {
+            $order->details()->create([
+                'product_id' => $item['id'],
+                'quantity' => $item['quantity'],
+                'price' => Product::find($item['id'])->price,
+            ]);
+        }
+
+        return $order;
+    }
 }

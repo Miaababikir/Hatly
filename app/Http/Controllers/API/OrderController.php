@@ -11,14 +11,6 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
-        $order = auth()->user()->orders()->create();
-
-        foreach ($request->cart as $item) {
-            $order->details()->create([
-                'product_id' => $item['id'],
-                'quantity' => $item['quantity'],
-                'price' => Product::find($item['id'])->price,
-            ]);
-        }
+        $order = auth()->user()->placeOrder($request->cart);
     }
 }
