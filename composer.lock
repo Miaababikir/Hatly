@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1abf52d49d1ba6cd6a3e37a47ce4aa12",
+    "content-hash": "942011cccfcc57bab155716cfec0b01e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -511,6 +511,56 @@
             "time": "2020-04-28T08:47:37+00:00"
         },
         {
+            "name": "fzaninotto/faker",
+            "version": "v1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^2.9.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2019-12-12T13:22:17+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "6.5.4",
             "source": {
@@ -752,16 +802,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.14.1",
+            "version": "v7.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "469b7719a8dca40841a74f59f2e9f30f01d3a106"
+                "reference": "739c44a3f7041430a3fb357f2dcfdb78f55005d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/469b7719a8dca40841a74f59f2e9f30f01d3a106",
-                "reference": "469b7719a8dca40841a74f59f2e9f30f01d3a106",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/739c44a3f7041430a3fb357f2dcfdb78f55005d7",
+                "reference": "739c44a3f7041430a3fb357f2dcfdb78f55005d7",
                 "shasum": ""
             },
             "require": {
@@ -904,20 +954,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-06-02T22:34:18+00:00"
+            "time": "2020-06-09T14:00:25+00:00"
         },
         {
             "name": "laravel/sanctum",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "f85928a54d82c0ccd55e972aea435761bf07b2dd"
+                "reference": "2aac713ced04e6e7f046748833dea5ab4c98b621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/f85928a54d82c0ccd55e972aea435761bf07b2dd",
-                "reference": "f85928a54d82c0ccd55e972aea435761bf07b2dd",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/2aac713ced04e6e7f046748833dea5ab4c98b621",
+                "reference": "2aac713ced04e6e7f046748833dea5ab4c98b621",
                 "shasum": ""
             },
             "require": {
@@ -964,7 +1014,7 @@
                 "laravel",
                 "sanctum"
             ],
-            "time": "2020-06-09T19:57:15+00:00"
+            "time": "2020-06-11T13:58:49+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -4094,16 +4144,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "5261c488a1e8a7c3ebdf6a4037c34f5ddeb33922"
+                "reference": "e6bedc1e74507d584fbcb041ebe0f7f215109cf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/5261c488a1e8a7c3ebdf6a4037c34f5ddeb33922",
-                "reference": "5261c488a1e8a7c3ebdf6a4037c34f5ddeb33922",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/e6bedc1e74507d584fbcb041ebe0f7f215109cf2",
+                "reference": "e6bedc1e74507d584fbcb041ebe0f7f215109cf2",
                 "shasum": ""
             },
             "require": {
@@ -4161,7 +4211,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-06-01T09:04:48+00:00"
+            "time": "2020-06-08T09:14:08+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -4267,56 +4317,6 @@
                 "whoops"
             ],
             "time": "2020-05-05T12:28:07+00:00"
-        },
-        {
-            "name": "fzaninotto/faker",
-            "version": "v1.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0"
-            },
-            "require-dev": {
-                "ext-intl": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^2.9.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "time": "2019-12-12T13:22:17+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
