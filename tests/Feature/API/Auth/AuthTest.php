@@ -41,18 +41,18 @@ class AuthTest extends TestCase
     public function can_login_customer_and_issue_token()
     {
         $customer = factory(Customer::class)->create([
-            'email' => 'test@test.com',
+            'phone' => '09123456789',
         ]);
 
         $response = $this->post('/api/login', [
-            'email' => 'test@test.com',
+            'phone' => '09123456789',
             'password' => 'password',
         ]);
 
         $customer = Customer::first();
 
         $response->assertJson([
-            'customer' => $customer->only(['id', 'name', 'email', 'area_id', 'address']),
+            'customer' => $customer->only(['id', 'name', 'email', 'phone', 'area_id', 'address']),
         ]);
 
     }
@@ -63,7 +63,7 @@ class AuthTest extends TestCase
      public function can_logout_customer_and_delete_his_token()
     {
         $customer = factory(Customer::class)->create([
-            'email' => 'test@test.com',
+            'phone' => '09123456789',
         ]);
 
         Sanctum::actingAs(

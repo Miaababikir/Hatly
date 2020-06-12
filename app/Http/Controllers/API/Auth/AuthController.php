@@ -29,20 +29,20 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'phone' => 'required',
             'password' => 'required',
         ]);
 
-        $customer = Customer::where('email', $request->email)->first();
+        $customer = Customer::where('phone', $request->phone)->first();
 
         if (! $customer || ! Hash::check($request->password, $customer->password)) {
             throw ValidationException::withMessages([
-                'username' => ['The provided credentials are incorrect.'],
+                'phone' => ['The provided credentials are incorrect.'],
             ]);
         }
 
         return response()->json([
-            'customer' => $customer->only(['id', 'name', 'email', 'area_id', 'address']),
+            'customer' => $customer->only(['id', 'name', 'email', 'phone', 'area_id', 'address']),
             'token' => $customer->createToken('mobile')->plainTextToken
         ]);
 
