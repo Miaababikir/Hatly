@@ -18,4 +18,9 @@ class Product extends Model
     {
         return $this->belongsTo(Unit::class);
     }
+
+    public function updateStock($quantity)
+    {
+        $this->update(['stock' => $this->stock - $quantity]);
+    }
 }
