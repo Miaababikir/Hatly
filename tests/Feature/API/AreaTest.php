@@ -16,13 +16,11 @@ class AreaTest extends TestCase
      */
     public function customer_can_get_all_areas()
     {
-        $this->apiLogin();
-
         factory(Area::class, 10)->create();
 
         $response = $this->get('/api/areas');
 
-        $response->assertJsonCount(11);
+        $response->assertJsonCount(10);
 
     }
 }

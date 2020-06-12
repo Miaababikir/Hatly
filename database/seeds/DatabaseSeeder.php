@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         factory(Customer::class)->create([
-            'username' => 'customer',
+            'email' => 'test@test.com',
         ]);
 
         factory(Area::class)->create([

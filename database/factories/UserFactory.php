@@ -61,7 +61,7 @@ $factory->define(Unit::class, function (Faker $faker) {
 $factory->define(Customer::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'username' => $faker->userName,
+        'email' => $faker->safeEmail,
         'phone' => $faker->phoneNumber,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
         'address' => $faker->address,

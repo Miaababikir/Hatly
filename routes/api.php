@@ -35,12 +35,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', 'API\Auth\AuthController@login');
 Route::post('/register', 'API\Auth\AuthController@register');
 
+Route::get('/areas', 'API\AreaController@index');
+
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/logout', 'API\Auth\AuthController@logout');
 
     Route::get('/categories', 'API\CategoryController@index');
-    Route::get('/areas', 'API\AreaController@index');
     Route::get('/products', 'API\ProductController@index');
     Route::get('/delivery-fees', 'API\DeliveryController@index');
 

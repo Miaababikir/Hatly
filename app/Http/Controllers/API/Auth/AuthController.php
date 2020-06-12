@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'username' => 'required|unique:customers',
+            'email' => 'required|unique:customers',
             'phone' => 'required|unique:customers',
             'password' => 'required',
             'area_id' => 'required',
@@ -29,11 +29,11 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'email' => 'required',
             'password' => 'required',
         ]);
 
-        $customer = Customer::where('username', $request->username)->first();
+        $customer = Customer::where('email', $request->email)->first();
 
         if (! $customer || ! Hash::check($request->password, $customer->password)) {
             throw ValidationException::withMessages([
@@ -42,7 +42,7 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            'username' => $customer->username,
+            'customer' => $customer->only(['id', 'name', 'email', 'area_id', 'address']),
             'token' => $customer->createToken('mobile')->plainTextToken
         ]);
 

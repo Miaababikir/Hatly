@@ -24,7 +24,7 @@ class CustomerController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'username' => 'required|unique:customers',
+            'email' => 'required|unique:customers',
             'phone' => 'required|unique:customers',
             'password' => 'required',
             'area_id' => 'required',
@@ -50,7 +50,7 @@ class CustomerController extends Controller
     {
         $data = $request->validate([
             'name' => 'sometimes',
-            'username' => 'sometimes|unique:customers,username,' . $customer->id,
+            'email' => 'sometimes|unique:customers,email,' . $customer->id,
             'phone' => 'sometimes|unique:customers,phone,' . $customer->id,
             'password' => 'sometimes',
             'area_id' => 'sometimes',

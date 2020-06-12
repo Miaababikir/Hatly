@@ -23,7 +23,7 @@ class CustomerControllerTest extends TestCase
 
         $this->post('/dashboard/customers', [
             'name' => 'Jone Doe',
-            'username' => 'jonedoe',
+            'email' => 'test@test.com',
             'phone' => '09123456789',
             'password' => 'password',
             'address' => 'address',
@@ -32,7 +32,7 @@ class CustomerControllerTest extends TestCase
 
         $this->assertDatabaseHas('customers', [
             'name' => 'Jone Doe',
-            'username' => 'jonedoe',
+            'email' => 'test@test.com',
             'phone' => '09123456789',
             'address' => 'address',
             'area_id' => $area->id,
@@ -50,7 +50,7 @@ class CustomerControllerTest extends TestCase
 
         $this->put("/dashboard/customers/$customer->id", [
             'name' => 'Jone Doe',
-            'username' => 'jonedoe',
+            'email' => 'test@test.com',
             'phone' => '09123456789',
             'password' => 'password',
             'address' => 'address',
@@ -59,7 +59,7 @@ class CustomerControllerTest extends TestCase
 
         $this->assertDatabaseHas('customers', [
             'name' => 'Jone Doe',
-            'username' => 'jonedoe',
+            'email' => 'test@test.com',
             'phone' => '09123456789',
             'address' => 'address',
             'area_id' => $customer->area_id,
