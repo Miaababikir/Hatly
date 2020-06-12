@@ -14,7 +14,7 @@ class CategoryTest extends TestCase
     /**
     * @test
     */
-     public function can_get_all_categories()
+     public function customer_can_get_all_categories()
     {
         $this->apiLogin();
 

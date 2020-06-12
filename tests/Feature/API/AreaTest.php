@@ -14,7 +14,7 @@ class AreaTest extends TestCase
     /**
      * @test
      */
-    public function can_get_all_areas()
+    public function customer_can_get_all_areas()
     {
         $this->apiLogin();
 

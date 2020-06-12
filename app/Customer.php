@@ -22,7 +22,6 @@ class Customer extends Authenticatable
         $order = $this->orders()->create();
 
         foreach ($cart as $item) {
-//            return $item;
             $order->details()->create([
                 'product_id' => $item['id'],
                 'quantity' => $item['quantity'],

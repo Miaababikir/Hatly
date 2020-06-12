@@ -16,7 +16,7 @@ class OrderTest extends TestCase
     /**
      * @test
      */
-    public function can_place_new_order()
+    public function customer_can_place_new_order()
     {
         $customer = factory(Customer::class)->create();
 
@@ -48,7 +48,7 @@ class OrderTest extends TestCase
     /**
      * @test
      */
-    public function can_get_order_details()
+    public function customer_can_get_order_details()
     {
         $customer = $this->apiLogin();
 

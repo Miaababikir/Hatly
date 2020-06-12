@@ -14,7 +14,7 @@ class ProductTest extends TestCase
     /**
      * @test
      */
-    public function can_get_all_products()
+    public function customer_can_get_all_products()
     {
         $this->apiLogin();
 

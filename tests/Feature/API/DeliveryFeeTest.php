@@ -14,7 +14,7 @@ class DeliveryFeeTest extends TestCase
     /**
      * @test
      */
-    public function can_get_delivery_fees()
+    public function customer_can_get_delivery_fees()
     {
         $this->apiLogin();
 
