@@ -5,6 +5,7 @@
 use App\Area;
 use App\Category;
 use App\Customer;
+use App\DeliveryMan;
 use App\Order;
 use App\Product;
 use App\Status;
@@ -65,6 +66,16 @@ $factory->define(Customer::class, function (Faker $faker) {
         'phone' => $faker->phoneNumber,
         'alt_phone' => $faker->phoneNumber,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+        'address' => $faker->address,
+        'area_id' => fn() =>  \factory(Area::class)->create(),
+    ];
+});
+
+$factory->define(DeliveryMan::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'phone' => $faker->phoneNumber,
+        'alt_phone' => $faker->phoneNumber,
         'address' => $faker->address,
         'area_id' => fn() =>  \factory(Area::class)->create(),
     ];
