@@ -33,7 +33,7 @@
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white text-gray-700">
-                                <tr v-for="order in orders">
+                                <tr v-for="order in orders.data">
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                         {{ order.customer.name }}
                                     </td>
@@ -59,6 +59,8 @@
                     </div>
                 </div>
             </div>
+
+            <pagination :links="orders.links" class="mt-5"></pagination>
         </div>
 
     </layout>
@@ -66,9 +68,10 @@
 
 <script>
     import Layout from "../../../Shared/Layout";
+    import Pagination from "../../../Shared/Pagination";
 
     export default {
-        components: {Layout},
+        components: {Pagination, Layout},
         props: ['orders']
     }
 </script>

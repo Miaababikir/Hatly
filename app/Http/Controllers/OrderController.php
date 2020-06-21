@@ -9,7 +9,9 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::query()
+            ->orderByDesc('id')
+            ->paginate(10);
 
         return inertia()->render('Dashboard/orders/index', [
             'orders' => $orders

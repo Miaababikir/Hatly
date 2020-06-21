@@ -3056,6 +3056,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Shared/Layout */ "./resources/js/Shared/Layout.vue");
+/* harmony import */ var _Shared_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Shared/Pagination */ "./resources/js/Shared/Pagination.vue");
+//
+//
 //
 //
 //
@@ -3123,8 +3126,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    Pagination: _Shared_Pagination__WEBPACK_IMPORTED_MODULE_1__["default"],
     Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: ['orders']
@@ -3947,6 +3952,45 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/logout').then(function () {
         return location.reload();
       });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/Pagination.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/Pagination.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    links: Array
+  },
+  computed: {
+    showPagination: function showPagination() {
+      return this.links.length > 3;
+    }
+  },
+  methods: {
+    isActive: function isActive(link) {
+      return link.active === true ? 'bg-indigo-600 text-gray-200' : 'bg-white text-gray-700';
+    },
+    handleNoLink: function handleNoLink() {
+      return false;
     }
   }
 });
@@ -8723,212 +8767,222 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("layout", [
-    _c("div", { staticClass: "mt-8" }, [
-      _c("div", { staticClass: "flex justify-between" }, [
-        _c("h2", { staticClass: "text-3xl text-gray-700 font-bold" }, [
-          _vm._v("الطلبات")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-4" }, [
-        _c("div", { staticClass: "flex flex-col" }, [
-          _c(
-            "div",
-            { staticClass: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6" },
-            [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
-                },
-                [
-                  _c("table", { staticClass: "min-w-full" }, [
-                    _c("thead", { staticClass: "bg-gray-100" }, [
-                      _c("tr", [
-                        _c(
-                          "th",
-                          {
-                            staticClass:
-                              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
-                            staticStyle: { "text-align": "start" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                    اسم الزبون\n                                "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "th",
-                          {
-                            staticClass:
-                              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
-                            staticStyle: { "text-align": "start" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                    رقم الزبون\n                                "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "th",
-                          {
-                            staticClass:
-                              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
-                            staticStyle: { "text-align": "start" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                    الحالة\n                                "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "th",
-                          {
-                            staticClass:
-                              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
-                            staticStyle: { "text-align": "start" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                    التعديل\n                                "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("th", {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50"
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      { staticClass: "bg-white text-gray-700" },
-                      _vm._l(_vm.orders, function(order) {
-                        return _c("tr", [
+    _c(
+      "div",
+      { staticClass: "mt-8" },
+      [
+        _c("div", { staticClass: "flex justify-between" }, [
+          _c("h2", { staticClass: "text-3xl text-gray-700 font-bold" }, [
+            _vm._v("الطلبات")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-4" }, [
+          _c("div", { staticClass: "flex flex-col" }, [
+            _c(
+              "div",
+              { staticClass: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6" },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                  },
+                  [
+                    _c("table", { staticClass: "min-w-full" }, [
+                      _c("thead", { staticClass: "bg-gray-100" }, [
+                        _c("tr", [
                           _c(
-                            "td",
+                            "th",
                             {
                               staticClass:
-                                "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                                "px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                              staticStyle: { "text-align": "start" }
                             },
                             [
                               _vm._v(
-                                "\n                                    " +
-                                  _vm._s(order.customer.name) +
-                                  "\n                                "
+                                "\n                                    اسم الزبون\n                                "
                               )
                             ]
                           ),
                           _vm._v(" "),
                           _c(
-                            "td",
+                            "th",
                             {
                               staticClass:
-                                "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                                "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                              staticStyle: { "text-align": "start" }
                             },
                             [
                               _vm._v(
-                                "\n                                    " +
-                                  _vm._s(order.customer.phone) +
-                                  "\n                                "
+                                "\n                                    رقم الزبون\n                                "
                               )
                             ]
                           ),
                           _vm._v(" "),
                           _c(
-                            "td",
+                            "th",
                             {
                               staticClass:
-                                "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                                "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                              staticStyle: { "text-align": "start" }
                             },
                             [
-                              order.editable
-                                ? _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "px-2 py-1 bg-green-500 text-white text-xs rounded"
-                                    },
-                                    [_vm._v("يمكن التعديل")]
-                                  )
-                                : _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "px-2 py-1 bg-yellow-500 text-white text-xs rounded"
-                                    },
-                                    [_vm._v("لا يمكن التعديل")]
-                                  )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "td",
-                            {
-                              staticClass:
-                                "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
-                            },
-                            [
-                              order.delivered
-                                ? _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "px-2 py-1 bg-green-500 text-white text-xs rounded"
-                                    },
-                                    [_vm._v("تم التوصيل")]
-                                  )
-                                : _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "px-2 py-1 bg-yellow-500 text-white text-xs rounded"
-                                    },
-                                    [_vm._v("لم يتم التوصيل")]
-                                  )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "td",
-                            {
-                              staticClass:
-                                "px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium"
-                            },
-                            [
-                              _c(
-                                "inertia-link",
-                                {
-                                  staticClass:
-                                    "text-indigo-600 hover:text-indigo-900",
-                                  attrs: { href: "#" }
-                                },
-                                [_vm._v("تعديل")]
+                              _vm._v(
+                                "\n                                    الحالة\n                                "
                               )
-                            ],
-                            1
-                          )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "th",
+                            {
+                              staticClass:
+                                "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                              staticStyle: { "text-align": "start" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    التعديل\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("th", {
+                            staticClass:
+                              "px-6 py-3 border-b border-gray-200 bg-gray-50"
+                          })
                         ])
-                      }),
-                      0
-                    )
-                  ])
-                ]
-              )
-            ]
-          )
-        ])
-      ])
-    ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        { staticClass: "bg-white text-gray-700" },
+                        _vm._l(_vm.orders.data, function(order) {
+                          return _c("tr", [
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(order.customer.name) +
+                                    "\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(order.customer.phone) +
+                                    "\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                              },
+                              [
+                                order.editable
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "px-2 py-1 bg-green-500 text-white text-xs rounded"
+                                      },
+                                      [_vm._v("يمكن التعديل")]
+                                    )
+                                  : _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "px-2 py-1 bg-yellow-500 text-white text-xs rounded"
+                                      },
+                                      [_vm._v("لا يمكن التعديل")]
+                                    )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                              },
+                              [
+                                order.delivered
+                                  ? _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "px-2 py-1 bg-green-500 text-white text-xs rounded"
+                                      },
+                                      [_vm._v("تم التوصيل")]
+                                    )
+                                  : _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "px-2 py-1 bg-yellow-500 text-white text-xs rounded"
+                                      },
+                                      [_vm._v("لم يتم التوصيل")]
+                                    )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium"
+                              },
+                              [
+                                _c(
+                                  "inertia-link",
+                                  {
+                                    staticClass:
+                                      "text-indigo-600 hover:text-indigo-900",
+                                    attrs: { href: "#" }
+                                  },
+                                  [_vm._v("تعديل")]
+                                )
+                              ],
+                              1
+                            )
+                          ])
+                        }),
+                        0
+                      )
+                    ])
+                  ]
+                )
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("pagination", {
+          staticClass: "mt-5",
+          attrs: { links: _vm.orders.links }
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -10866,6 +10920,70 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/Pagination.vue?vue&type=template&id=7ed7fa14&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Shared/Pagination.vue?vue&type=template&id=7ed7fa14& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.showPagination
+    ? _c(
+        "ul",
+        { staticClass: "flex", attrs: { "aria-label": "Page navigation" } },
+        _vm._l(_vm.links, function(link, key) {
+          return _c(
+            "li",
+            {
+              key: key,
+              staticClass:
+                "mx-1 px-3 py-2 hover:bg-indigo-600 hover:text-gray-200 rounded-lg",
+              class: _vm.isActive(link)
+            },
+            [
+              link.url
+                ? _c(
+                    "inertia-link",
+                    { staticClass: "font-bold", attrs: { href: link.url } },
+                    [_vm._v(_vm._s(link.label))]
+                  )
+                : _c(
+                    "a",
+                    {
+                      staticClass: "font-bold",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.handleNoLink($event)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(link.label))]
+                  )
+            ],
+            1
+          )
+        }),
+        0
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -25394,6 +25512,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Layout_vue_vue_type_template_id_6bf30086___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Layout_vue_vue_type_template_id_6bf30086___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Pagination.vue":
+/*!********************************************!*\
+  !*** ./resources/js/Shared/Pagination.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Pagination_vue_vue_type_template_id_7ed7fa14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pagination.vue?vue&type=template&id=7ed7fa14& */ "./resources/js/Shared/Pagination.vue?vue&type=template&id=7ed7fa14&");
+/* harmony import */ var _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pagination.vue?vue&type=script&lang=js& */ "./resources/js/Shared/Pagination.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Pagination_vue_vue_type_template_id_7ed7fa14___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Pagination_vue_vue_type_template_id_7ed7fa14___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Shared/Pagination.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Pagination.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Shared/Pagination.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Pagination.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/Pagination.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Pagination.vue?vue&type=template&id=7ed7fa14&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Shared/Pagination.vue?vue&type=template&id=7ed7fa14& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_template_id_7ed7fa14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Pagination.vue?vue&type=template&id=7ed7fa14& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Shared/Pagination.vue?vue&type=template&id=7ed7fa14&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_template_id_7ed7fa14___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_template_id_7ed7fa14___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
