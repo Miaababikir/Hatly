@@ -3,7 +3,7 @@
 
         <div class="mt-8">
             <div class="flex">
-                <h2 class="text-3xl text-indigo-500 font-bold">المستخدمين /<span class="text-gray-700"> اضافة</span></h2>
+                <h2 class="text-3xl text-indigo-500 font-bold">الادمن /<span class="text-gray-700"> اضافة</span></h2>
             </div>
 
             <base-panel class="md:max-w-3xl mt-4">

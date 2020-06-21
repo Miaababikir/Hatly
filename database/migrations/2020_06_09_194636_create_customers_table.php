@@ -18,6 +18,7 @@ class CreateCustomersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->unique();
+            $table->string('alt_phone')->unique()->nullable();
             $table->string('password');
             $table->foreignId('area_id');
             $table->string('address');

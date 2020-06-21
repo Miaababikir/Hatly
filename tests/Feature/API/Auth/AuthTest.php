@@ -25,6 +25,7 @@ class AuthTest extends TestCase
             'email' => 'test@test.com',
             'password' => 'password',
             'phone' => '09123456789',
+            'alt_phone' => '09123456789',
             'address' => 'address',
             'area_id' => $area->id,
         ]);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
 use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +18,9 @@ class CustomerController extends Controller
 
     public function create()
     {
-        return inertia()->render('Dashboard/customers/create');
+        return inertia()->render('Dashboard/customers/create', [
+            'areas' => Area::all(),
+        ]);
     }
 
     public function store(Request $request)
@@ -26,6 +29,7 @@ class CustomerController extends Controller
             'name' => 'required',
             'email' => 'required|unique:customers',
             'phone' => 'required|unique:customers',
+            'alt_phone' => 'required|unique:customers',
             'password' => 'required',
             'area_id' => 'required',
             'address' => 'required',
@@ -43,7 +47,10 @@ class CustomerController extends Controller
 
     public function edit(Customer $customer)
     {
-        return inertia()->render('Dashboard/customers/edit', ['customer' => $customer]);
+        return inertia()->render('Dashboard/customers/edit', [
+            'customer' => $customer,
+            'areas' => Area::all(),
+        ]);
     }
 
     public function update(Request $request, Customer $customer)
@@ -52,6 +59,7 @@ class CustomerController extends Controller
             'name' => 'sometimes',
             'email' => 'sometimes|unique:customers,email,' . $customer->id,
             'phone' => 'sometimes|unique:customers,phone,' . $customer->id,
+            'alt_phone' => 'sometimes|unique:customers,alt_phone,' . $customer->id,
             'password' => 'sometimes',
             'area_id' => 'sometimes',
             'address' => 'sometimes',

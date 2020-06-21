@@ -3,11 +3,11 @@
 
         <div class="mt-8">
             <div class="flex justify-between">
-                <h2 class="text-3xl text-gray-700 font-bold">الادمن</h2>
+                <h2 class="text-3xl text-gray-700 font-bold">المستخدمين</h2>
                 <div>
-                    <inertia-link href="/dashboard/users/create"
+                    <inertia-link href="/dashboard/customers/create"
                                   class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded">
-                        ادمن جديد
+                        مستخدم جديد
                     </inertia-link>
                 </div>
             </div>
@@ -27,20 +27,43 @@
                                         style="text-align: start">
                                         البريد الالكتروني
                                     </th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                        style="text-align: start">
+                                        رقم التلفون
+                                    </th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                        style="text-align: start">
+                                        رقم التلفون البديل
+                                    </th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                        style="text-align: start">
+                                        المنطقة
+                                    </th>
                                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white text-gray-700">
-                                <tr v-for="user in users">
+                                <tr v-for="customer in customers">
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        {{ user.name }}
+                                        {{ customer.name }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        {{ user.email }}
+                                        {{ customer.email }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        {{ customer.phone }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        {{ customer.alt_phone }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        {{ customer.area.name_ar }}
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
-                                        <inertia-link :href="`/dashboard/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">تعديل</inertia-link>
+                                        <inertia-link :href="`/dashboard/customers/${customer.id}/edit`"
+                                                      class="text-indigo-600 hover:text-indigo-900">تعديل
+                                        </inertia-link>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -59,6 +82,6 @@
 
     export default {
         components: {Layout},
-        props: ['users']
+        props: ['customers']
     }
 </script>

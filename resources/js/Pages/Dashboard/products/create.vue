@@ -18,6 +18,7 @@
                                         :error="$page.errors.name_ar" required></base-input>
                         </div>
                         <div>
+                            <span class="text-gray-700">الاصناف</span>
                             <base-select label="name_ar" :options="categories" :reduce="category => category.id"
                                          v-model="form.category_id" dir="rtl" required>
                                 <template #search="{attributes, events}">
@@ -31,6 +32,7 @@
                             </base-select>
                         </div>
                         <div>
+                            <span class="text-gray-700">الوحدات</span>
                             <base-select label="name_ar" :options="units" :reduce="unit => unit.id"
                                          v-model="form.unit_id" dir="rtl" required>
                                 <template #search="{attributes, events}">

@@ -38,6 +38,13 @@
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
                     :class="route().current('users.*')? 'bg-gray-900' : ''">
                     <inertia-link href="/dashboard/users" class="flex items-center">
+                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        <span class="mx-2 text-gray-300">الادمن</span>
+                    </inertia-link>
+                </li>
+                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
+                    :class="route().current('customers.*')? 'bg-gray-900' : ''">
+                    <inertia-link href="/dashboard/customers" class="flex items-center">
                         <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round"
                              stroke-linejoin="round"
                              stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">

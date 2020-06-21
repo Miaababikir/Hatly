@@ -25,6 +25,7 @@ class CustomerControllerTest extends TestCase
             'name' => 'Jone Doe',
             'email' => 'test@test.com',
             'phone' => '09123456789',
+            'alt_phone' => '09123456789',
             'password' => 'password',
             'address' => 'address',
             'area_id' => $area->id,
@@ -34,6 +35,7 @@ class CustomerControllerTest extends TestCase
             'name' => 'Jone Doe',
             'email' => 'test@test.com',
             'phone' => '09123456789',
+            'alt_phone' => '09123456789',
             'address' => 'address',
             'area_id' => $area->id,
         ]);
@@ -52,6 +54,7 @@ class CustomerControllerTest extends TestCase
             'name' => 'Jone Doe',
             'email' => 'test@test.com',
             'phone' => '09123456789',
+            'alt_phone' => '09123456789',
             'password' => 'password',
             'address' => 'address',
             'area_id' => $customer->area_id,
@@ -61,6 +64,7 @@ class CustomerControllerTest extends TestCase
             'name' => 'Jone Doe',
             'email' => 'test@test.com',
             'phone' => '09123456789',
+            'alt_phone' => '09123456789',
             'address' => 'address',
             'area_id' => $customer->area_id,
         ]);

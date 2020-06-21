@@ -16,6 +16,7 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|unique:customers',
             'phone' => 'required|unique:customers',
+            'alt_phone' => 'sometimes|unique:customers',
             'password' => 'required',
             'area_id' => 'required',
             'address' => 'required',

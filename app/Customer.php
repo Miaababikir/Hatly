@@ -12,10 +12,16 @@ class Customer extends Authenticatable
     use HasApiTokens;
     protected $guarded = [];
     protected $hidden = ['password'];
+    protected $with = ['area'];
 
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
     }
 
     public function placeOrder($cart)
