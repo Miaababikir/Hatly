@@ -3125,6 +3125,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -8802,6 +8809,20 @@ var render = function() {
                             },
                             [
                               _vm._v(
+                                "\n                                    #\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "th",
+                            {
+                              staticClass:
+                                "px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                              staticStyle: { "text-align": "start" }
+                            },
+                            [
+                              _vm._v(
                                 "\n                                    اسم الزبون\n                                "
                               )
                             ]
@@ -8861,6 +8882,21 @@ var render = function() {
                         { staticClass: "bg-white text-gray-700" },
                         _vm._l(_vm.orders.data, function(order) {
                           return _c("tr", [
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "px-6 py-4 whitespace-no-wrap border-b border-gray-200"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(order.id) +
+                                    "\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
                             _c(
                               "td",
                               {
