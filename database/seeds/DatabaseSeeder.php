@@ -2,6 +2,7 @@
 
 use App\Area;
 use App\Customer;
+use App\Order;
 use App\Product;
 use App\User;
 use Illuminate\Database\Seeder;
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
 
         factory(Customer::class)->create([
             'email' => 'test@test.com',
+            'area_id' => 1
         ]);
 
         factory(Area::class)->create([
@@ -39,7 +41,18 @@ class DatabaseSeeder extends Seeder
             'name_ar' => 'امدرمان'
         ]);
 
-        factory(Product::class, 20)->create();
+        $products = factory(Product::class, 20)->create();
+
+        $orders = factory(Order::class, 20)->create(['customer_id' => 1]);
+
+        foreach ($orders as $order) {
+            $product = $products->random(1)->first();
+            $order->details()->create([
+                'product_id' => $product->id,
+                'quantity' => 2,
+                'price' => $product->price
+            ]);
+        }
 
     }
 }

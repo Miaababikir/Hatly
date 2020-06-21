@@ -71,6 +71,13 @@
                     </inertia-link>
                 </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
+                    :class="route().current('units.*')? 'bg-gray-900' : ''">
+                    <inertia-link :href="$route('units.index')" class="flex items-center">
+                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                        <span class="mx-2 text-gray-300">الوحدات</span>
+                    </inertia-link>
+                </li>
+                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
                     :class="route().current('products.*')? 'bg-gray-900' : ''">
                     <inertia-link :href="$route('products.index')" class="flex items-center">
                         <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
@@ -78,10 +85,10 @@
                     </inertia-link>
                 </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
-                    :class="route().current('units.*')? 'bg-gray-900' : ''">
-                    <inertia-link :href="$route('units.index')" class="flex items-center">
-                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-                        <span class="mx-2 text-gray-300">الوحدات</span>
+                    :class="route().current('orders.*')? 'bg-gray-900' : ''">
+                    <inertia-link :href="$route('orders.index')" class="flex items-center">
+                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
+                        <span class="mx-2 text-gray-300">الطلبات</span>
                     </inertia-link>
                 </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">

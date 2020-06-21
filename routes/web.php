@@ -59,4 +59,7 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/products/{product}/edit', 'ProductController@edit')->name('products.edit');
     Route::put('/products/{product}', 'ProductController@update')->name('products.update');
 
+    Route::get('/orders', 'OrderController@index')->name('orders.index');
+
+
 });
