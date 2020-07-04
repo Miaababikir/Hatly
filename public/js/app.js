@@ -3462,7 +3462,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submitAssignDeliveryMan: function submitAssignDeliveryMan() {
-      this.$inertia.post(this.$route('deliveryMen.orders.store', this.assignDeliveryForm.delivery_man_id), this.assignDeliveryForm);
+      var _this = this;
+
+      this.$inertia.post(this.$route('deliveryMen.orders.store', this.assignDeliveryForm.delivery_man_id), this.assignDeliveryForm).then(function () {
+        _this.assignDeliveryForm = {
+          orders: [],
+          delivery_man_id: ''
+        };
+      });
     }
   }
 });
@@ -9863,7 +9870,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("base-select", {
                         attrs: {
-                          label: "id",
+                          label: "name",
                           options: _vm.deliveryMen,
                           reduce: function(man) {
                             return man.id

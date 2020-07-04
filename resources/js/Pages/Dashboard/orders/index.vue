@@ -29,7 +29,7 @@
                             </div>
                             <div class="w-1/3 mr-4">
                                 <span class="text-gray-700">اختر رجل التوصيل</span>
-                                <base-select label="id" :options="deliveryMen" :reduce="man => man.id" v-model="assignDeliveryForm.delivery_man_id" dir="rtl" required>
+                                <base-select label="name" :options="deliveryMen" :reduce="man => man.id" v-model="assignDeliveryForm.delivery_man_id" dir="rtl" required>
                                     <template #search="{attributes, events}">
                                         <input
                                             class="vs__search"
@@ -137,7 +137,13 @@
 
         methods: {
             submitAssignDeliveryMan() {
-                this.$inertia.post(this.$route('deliveryMen.orders.store', this.assignDeliveryForm.delivery_man_id), this.assignDeliveryForm);
+                this.$inertia.post(this.$route('deliveryMen.orders.store', this.assignDeliveryForm.delivery_man_id), this.assignDeliveryForm)
+                .then(() => {
+                    this.assignDeliveryForm = {
+                        orders: [],
+                        delivery_man_id: ''
+                    }
+                });
             }
         }
     }

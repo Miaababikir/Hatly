@@ -27,8 +27,7 @@ class DatabaseSeeder extends Seeder
             'area_id' => 1
         ]);
 
-        factory(DeliveryMan::class)->create([
-            'email' => 'test@test.com',
+        factory(DeliveryMan::class, 5)->create([
             'area_id' => 1
         ]);
 
