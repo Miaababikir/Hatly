@@ -59,6 +59,9 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/delivery-men/{deliveryMan}/edit', 'DeliveryManController@edit')->name('deliveryMen.edit');
     Route::put('/delivery-men/{deliveryMan}', 'DeliveryManController@update')->name('deliveryMen.update');
 
+    Route::post('/delivery-men/{deliveryMan}/orders', 'DeliveryManOrderController@store')->name('deliveryMen.orders.store');
+
+
     Route::get('/products', 'ProductController@index')->name('products.index');
     Route::get('/products/create', 'ProductController@create')->name('products.create');
     Route::post('/products', 'ProductController@store')->name('products.store');

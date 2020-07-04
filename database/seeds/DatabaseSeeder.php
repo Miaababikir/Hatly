@@ -2,6 +2,7 @@
 
 use App\Area;
 use App\Customer;
+use App\DeliveryMan;
 use App\Order;
 use App\Product;
 use App\User;
@@ -22,6 +23,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         factory(Customer::class)->create([
+            'email' => 'test@test.com',
+            'area_id' => 1
+        ]);
+
+        factory(DeliveryMan::class)->create([
             'email' => 'test@test.com',
             'area_id' => 1
         ]);

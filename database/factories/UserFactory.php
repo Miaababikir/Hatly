@@ -95,6 +95,7 @@ $factory->define(Product::class, function (Faker $faker) {
 $factory->define(Order::class, function (Faker $faker) {
     return [
         'customer_id' => fn() =>  \factory(Customer::class)->create(),
+        'delivery_man_id' => null,
     ];
 });
 

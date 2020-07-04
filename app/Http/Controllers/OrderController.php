@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DeliveryMan;
 use App\Order;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,14 @@ class OrderController extends Controller
             ->orderByDesc('id')
             ->paginate(10);
 
+        $notDeliveredOrders = Order::has('deliveryMan', 0)->where('delivered', false)->get();
+
+        $deliveryMen = DeliveryMan::all();
+
         return inertia()->render('Dashboard/orders/index', [
-            'orders' => $orders
+            'orders' => $orders,
+            'notDeliveredOrders' => $notDeliveredOrders,
+            'deliveryMen' => $deliveryMen
         ]);
     }
 

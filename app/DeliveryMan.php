@@ -13,4 +13,9 @@ class DeliveryMan extends Model
     {
         return $this->belongsTo(Area::class);
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

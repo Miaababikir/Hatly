@@ -3398,6 +3398,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3405,7 +3451,20 @@ __webpack_require__.r(__webpack_exports__);
     Pagination: _Shared_Pagination__WEBPACK_IMPORTED_MODULE_1__["default"],
     Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['orders']
+  props: ['orders', 'notDeliveredOrders', 'deliveryMen'],
+  data: function data() {
+    return {
+      assignDeliveryForm: {
+        orders: [],
+        delivery_man_id: ''
+      }
+    };
+  },
+  methods: {
+    submitAssignDeliveryMan: function submitAssignDeliveryMan() {
+      this.$inertia.post(this.$route('deliveryMen.orders.store', this.assignDeliveryForm.delivery_man_id), this.assignDeliveryForm);
+    }
+  }
 });
 
 /***/ }),
@@ -9715,6 +9774,164 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
+        _c("base-panel", [
+          _c("h2", { staticClass: "text-lg text-gray-700 font-bold" }, [
+            _vm._v("تعيين رجال التوصيل")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-2" }, [
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.submitAssignDeliveryMan($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "flex items-end" }, [
+                  _c(
+                    "div",
+                    { staticClass: "w-1/3" },
+                    [
+                      _c("span", { staticClass: "text-gray-700" }, [
+                        _vm._v("اختر الطلبات")
+                      ]),
+                      _vm._v(" "),
+                      _c("base-select", {
+                        attrs: {
+                          label: "id",
+                          options: _vm.notDeliveredOrders,
+                          reduce: function(order) {
+                            return order.id
+                          },
+                          dir: "rtl",
+                          closeOnSelect: false,
+                          multiple: "",
+                          required: ""
+                        },
+                        scopedSlots: _vm._u([
+                          {
+                            key: "search",
+                            fn: function(ref) {
+                              var attributes = ref.attributes
+                              var events = ref.events
+                              return [
+                                _c(
+                                  "input",
+                                  _vm._g(
+                                    _vm._b(
+                                      {
+                                        staticClass: "vs__search",
+                                        attrs: {
+                                          required: !_vm.assignDeliveryForm
+                                            .orders
+                                        }
+                                      },
+                                      "input",
+                                      attributes,
+                                      false
+                                    ),
+                                    events
+                                  )
+                                )
+                              ]
+                            }
+                          }
+                        ]),
+                        model: {
+                          value: _vm.assignDeliveryForm.orders,
+                          callback: function($$v) {
+                            _vm.$set(_vm.assignDeliveryForm, "orders", $$v)
+                          },
+                          expression: "assignDeliveryForm.orders"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "w-1/3 mr-4" },
+                    [
+                      _c("span", { staticClass: "text-gray-700" }, [
+                        _vm._v("اختر رجل التوصيل")
+                      ]),
+                      _vm._v(" "),
+                      _c("base-select", {
+                        attrs: {
+                          label: "id",
+                          options: _vm.deliveryMen,
+                          reduce: function(man) {
+                            return man.id
+                          },
+                          dir: "rtl",
+                          required: ""
+                        },
+                        scopedSlots: _vm._u([
+                          {
+                            key: "search",
+                            fn: function(ref) {
+                              var attributes = ref.attributes
+                              var events = ref.events
+                              return [
+                                _c(
+                                  "input",
+                                  _vm._g(
+                                    _vm._b(
+                                      {
+                                        staticClass: "vs__search",
+                                        attrs: {
+                                          required: !_vm.assignDeliveryForm
+                                            .delivery_man_id
+                                        }
+                                      },
+                                      "input",
+                                      attributes,
+                                      false
+                                    ),
+                                    events
+                                  )
+                                )
+                              ]
+                            }
+                          }
+                        ]),
+                        model: {
+                          value: _vm.assignDeliveryForm.delivery_man_id,
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.assignDeliveryForm,
+                              "delivery_man_id",
+                              $$v
+                            )
+                          },
+                          expression: "assignDeliveryForm.delivery_man_id"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "w-1/3 mr-4" },
+                    [
+                      _c("base-button", { attrs: { primary: "" } }, [
+                        _vm._v("تعيين")
+                      ])
+                    ],
+                    1
+                  )
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "mt-4" }, [
           _c("div", { staticClass: "flex flex-col" }, [
             _c(
@@ -9926,7 +10143,11 @@ var render = function() {
                                       "text-indigo-600 hover:text-indigo-900",
                                     attrs: { href: "#" }
                                   },
-                                  [_vm._v("تعديل")]
+                                  [
+                                    _vm._v(
+                                      "تعديل\n                                    "
+                                    )
+                                  ]
                                 )
                               ],
                               1
