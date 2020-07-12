@@ -6,6 +6,7 @@ use App\Area;
 use App\Category;
 use App\Customer;
 use App\DeliveryMan;
+use App\Feedback;
 use App\Order;
 use App\Product;
 use App\Status;
@@ -47,6 +48,13 @@ $factory->define(Area::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
         'name_ar' => $faker->word,
+    ];
+});
+
+$factory->define(Feedback::class, function (Faker $faker) {
+    return [
+        'customer_id' => fn() => factory(Customer::class),
+        'message' => $faker->word,
     ];
 });
 

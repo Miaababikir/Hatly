@@ -39,6 +39,31 @@ class AuthTest extends TestCase
     /**
      * @test
      */
+    public function customer_can_update_his_profile()
+    {
+        $area = factory(Area::class)->create();
+
+        $customer = $this->apiLogin();
+
+        $this->put('/api/profile', [
+            'name' => 'Updated name',
+            'email' => 'updated@test.com',
+            'password' => 'password',
+            'phone' => '09123456789',
+            'alt_phone' => '09123456789',
+            'address' => 'address',
+            'area_id' => $area->id,
+        ]);
+
+        $this->assertDatabaseHas('customers', [
+            'name' => 'Updated name',
+            'email' => 'updated@test.com',
+        ]);
+    }
+
+    /**
+     * @test
+     */
     public function can_login_customer_and_issue_token()
     {
         $customer = factory(Customer::class)->create([

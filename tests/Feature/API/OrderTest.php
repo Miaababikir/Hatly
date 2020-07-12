@@ -113,6 +113,32 @@ class OrderTest extends TestCase
     }
 
     /**
+    * @test
+    */
+     public function customer_can_get_all_of_his_orders()
+    {
+        $customer = $this->apiLogin();
+
+        $product1 = factory(Product::class)->create(['price' => 100, 'stock' => 100]);
+        $product2 = factory(Product::class)->create(['price' => 250, 'stock' => 100]);
+        $product3 = factory(Product::class)->create(['price' => 300, 'stock' => 100]);
+
+        $cart = [
+            ['id' => $product1->id, 'price' => $product1->price, 'quantity' => 3],
+            ['id' => $product2->id, 'price' => $product2->price, 'quantity' => 5],
+            ['id' => $product3->id, 'price' => $product3->price, 'quantity' => 10],
+        ];
+
+        $customer->placeOrder($cart);
+        $customer->placeOrder($cart);
+        $customer->placeOrder($cart);
+
+        $response = $this->get("/api/orders");
+
+        $response->assertJsonCount(3);
+    }
+
+    /**
      * @test
      */
     public function customer_can_get_order_details()

@@ -40,6 +40,7 @@ Route::get('/areas', 'API\AreaController@index');
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/logout', 'API\Auth\AuthController@logout');
+    Route::put('/profile', 'API\Auth\AuthController@updateProfile');
 
     Route::get('/categories', 'API\CategoryController@index');
     Route::get('/products', 'API\ProductController@index');
@@ -47,6 +48,10 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
     Route::post('/orders', 'API\OrderController@store');
+    Route::get('/orders', 'API\OrderController@index');
     Route::get('/orders/{order}/details', 'API\OrderDetailController@index');
+
+    Route::post('/feedback', 'API\FeedbackController@store');
+    Route::get('/feedback', 'API\FeedbackController@index');
 
 });

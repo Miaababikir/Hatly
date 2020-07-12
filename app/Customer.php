@@ -24,6 +24,11 @@ class Customer extends Authenticatable
         return $this->belongsTo(Area::class);
     }
 
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class);
+    }
+
     public function placeOrder($cart)
     {
 
