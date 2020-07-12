@@ -105,6 +105,13 @@
                         <span class="mx-2 text-gray-300">الطلبات</span>
                     </inertia-link>
                 </li>
+                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2"
+                    :class="route().current('callCenter.*')? 'bg-gray-900' : ''">
+                    <inertia-link :href="$route('callCenter.index')" class="flex items-center">
+                        <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <span class="mx-2 text-gray-300">خدمة العملاء</span>
+                    </inertia-link>
+                </li>
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
                     <a href="#" class="flex items-center">
                         <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round"

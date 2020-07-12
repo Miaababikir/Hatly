@@ -70,5 +70,7 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
 
     Route::get('/orders', 'OrderController@index')->name('orders.index');
 
+    Route::get('/call-center', 'CallCenterController@index')->name('callCenter.index');
+
 
 });
