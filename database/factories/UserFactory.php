@@ -9,6 +9,7 @@ use App\DeliveryMan;
 use App\Feedback;
 use App\Order;
 use App\Product;
+use App\Setting;
 use App\Status;
 use App\Unit;
 use App\User;
@@ -104,6 +105,14 @@ $factory->define(Order::class, function (Faker $faker) {
     return [
         'customer_id' => fn() =>  \factory(Customer::class)->create(),
         'delivery_man_id' => null,
+        'total' => 0,
+        'total_price' => 0
+    ];
+});
+
+$factory->define(Setting::class, function (Faker $faker) {
+    return [
+        'delivery_fees' => 50,
     ];
 });
 

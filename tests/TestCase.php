@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\Customer;
+use App\Setting;
 use App\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Support\Arr;
@@ -14,10 +15,14 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
+    protected $setting;
+
     protected function setUp(): void
     {
         parent::setUp();
         $this->withoutExceptionHandling();
+
+        $this->setting = factory(Setting::class)->create();
 
         TestResponse::macro('props', function ($key = null) {
             $props = json_decode(json_encode($this->original->getData()['page']['props']), JSON_OBJECT_AS_ARRAY);

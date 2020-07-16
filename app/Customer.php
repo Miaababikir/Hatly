@@ -34,7 +34,14 @@ class Customer extends Authenticatable
 
         $this->checkProducts($cart);
 
-        $order = $this->orders()->create();
+        $total_price = collect($cart)->pluck('price')->sum();
+
+        $total = $this->getOrderTotal($total_price);
+
+        $order = $this->orders()->create([
+            'total_price' => $total_price,
+            'total' => $total,
+        ]);
 
         foreach ($cart as $item) {
             $product = Product::find($item['id']);
@@ -70,5 +77,10 @@ class Customer extends Authenticatable
             ]);
         }
 
+    }
+
+    protected function getOrderTotal($total)
+    {
+        return $total + Setting::find(1)->delivery_dees;
     }
 }

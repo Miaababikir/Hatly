@@ -8,9 +8,12 @@ class Order extends Model
 {
     protected $guarded = [];
 
-    const DELIVERY_FEES = 50;
-
     protected $with = ['customer'];
+
+    protected $casts = [
+        'total' => 'double',
+        'total_price' => 'double',
+    ];
 
     public function customer()
     {

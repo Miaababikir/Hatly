@@ -37,24 +37,81 @@
                         <div class="mt-4">
                             <div class="flex flex-col">
                                 <div>
-                                    <div class="flex justify-between">
+                                    <div class="flex justify-between items-center py-4 mt-3 border-b">
                                         <h2>طماطم</h2>
                                         <div class="flex items-center">
-                                            <button>
-                                                <svg class="w-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            <button class="w-8 h-8 bg-indigo-400 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                             </button>
-                                            <p class="mx-2">15</p>
-                                            <button class="text-gray-900 font-semibold text-gray-900">+</button>
+                                            <input class="w-8 h-8 border mx-2 rounded focus:outline-none focus:border-indigo-500 p-2 text-gray-700" disabled value="10">
+                                            <button class="w-8 h-8 bg-indigo-500 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            </button>
                                         </div>
                                         <div>
-
+                                            <span>120 جنيه</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div>Item</div>
-                                <div>Item</div>
-                                <div>Item</div>
-                                <div>Item</div>
+                                <div>
+                                    <div class="flex justify-between items-center py-4 mt-3 border-b">
+                                        <h2>طماطم</h2>
+                                        <div class="flex items-center">
+                                            <button class="w-8 h-8 bg-indigo-400 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            </button>
+                                            <input class="w-8 h-8 border mx-2 rounded focus:outline-none focus:border-indigo-500 p-2 text-gray-700" disabled value="10">
+                                            <button class="w-8 h-8 bg-indigo-500 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <span>120 جنيه</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-center py-4 mt-3 border-b">
+                                        <h2>طماطم</h2>
+                                        <div class="flex items-center">
+                                            <button class="w-8 h-8 bg-indigo-400 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            </button>
+                                            <input class="w-8 h-8 border mx-2 rounded focus:outline-none focus:border-indigo-500 p-2 text-gray-700" disabled value="10">
+                                            <button class="w-8 h-8 bg-indigo-500 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <span>120 جنيه</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-center py-4 mt-3 border-b">
+                                        <h2>طماطم</h2>
+                                        <div class="flex items-center">
+                                            <button class="w-8 h-8 bg-indigo-400 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            </button>
+                                            <input class="w-8 h-8 border mx-2 rounded focus:outline-none focus:border-indigo-500 p-2 text-gray-700" disabled value="10">
+                                            <button class="w-8 h-8 bg-indigo-500 flex items-center justify-center rounded">
+                                                <svg class="w-5 text-gray-100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <span>120 جنيه</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <div class="flex justify-between items-center">
+                                    <p class="font-semibold text-gray-700">المجموع: </p>
+                                    <p>250 جنيه</p>
+                                </div>
+                                <base-button primary class="w-full mt-4">شراء</base-button>
                             </div>
                         </div>
                     </base-panel>

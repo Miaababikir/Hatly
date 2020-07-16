@@ -20,7 +20,7 @@ class DeliveryFeeTest extends TestCase
 
         $response = $this->get('/api/delivery-fees');
 
-        $response->assertJson(['deliveryFee' => Order::DELIVERY_FEES]);
+        $response->assertJson(['deliveryFee' => $this->setting->delivery_fees]);
 
     }
 }

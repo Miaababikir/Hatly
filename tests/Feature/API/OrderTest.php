@@ -40,6 +40,12 @@ class OrderTest extends TestCase
         $orders = Order::all();
         $this->assertEquals(1, $orders->count());
 
+        $order = $orders->first();
+
+        $this->assertEquals(650, $order->total_price);
+
+        $this->assertEquals(650 + $this->setting->delivery_dees, $order->total);
+
         $details = $orders->first()->details;
 
         $this->assertEquals(3, $details->count());
